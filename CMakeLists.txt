@@ -334,11 +334,6 @@ if(AVIF_CODEC_DAV1D)
         set(AVIF_CODEC_LIBRARIES ${AVIF_CODEC_LIBRARIES} ${LIB_FILENAME})
     else()
         # Check to see if dav1d is independently being built by the outer CMake project
-        if(NOT TARGET dav1d)
-            find_package(dav1d REQUIRED)
-            set(AVIF_CODEC_INCLUDES ${AVIF_CODEC_INCLUDES} ${DAV1D_INCLUDE_DIR})
-        endif()
-        set(AVIF_CODEC_LIBRARIES ${AVIF_CODEC_LIBRARIES} ${DAV1D_LIBRARY})
     endif()
 
     if(UNIX AND NOT APPLE)
